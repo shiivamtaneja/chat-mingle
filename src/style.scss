@@ -8,6 +8,12 @@ $sideColor: #323338;
 $darkColor: #2c2d31;
 $fontPrimary: #ebf1ee;
 
+@mixin tablet {
+    @media screen and (max-width: 1024px) {
+        @content;
+    }
+}
+
 .formContainer {
     background-color: $sideColor;
     height: 100vh;
@@ -50,14 +56,37 @@ $fontPrimary: #ebf1ee;
     overflow: hidden;
 
     .sidebar {
-        flex: 1;
+        width: 300px;
         background-color: $darkColor;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+
+
+        img {
+            width: 250px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: $fontPrimary;
+        }
+
+        .user-details {
+            display: flex;
+            padding: 15px;
+        }
+
+        @include tablet {
+            display: none;
+        }
     }
 
     .container {
-        flex: 4;
+        flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -66,6 +95,43 @@ $fontPrimary: #ebf1ee;
             border-top: 1px solid white;
             overflow: hidden;
             overflow-y: auto;
+            height: 100vh;
+
+            .container {
+                padding: 10px;
+                color: white;
+
+                .container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: start;
+                    gap: 15px;
+
+                    img {
+                        width: 60px;
+                        border-radius: 50%;
+                    }
+
+                    .user-details {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        .user-name {
+                            font-size: 16px;
+                            font-weight: bold;
+                        }
+
+                        p {
+                            span {
+                                font-size: 12px;
+                                font-weight: normal;
+                                color: lightgrey;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .heading {
