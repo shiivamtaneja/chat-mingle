@@ -7,6 +7,7 @@ import { auth, provider } from "../firebase"
 
 import gImg from '../assets/img/g-logo.png'
 
+
 const SignIn = () => {
 
   const [logedin, setLogedIn] = useState("")
@@ -19,7 +20,7 @@ const SignIn = () => {
         console.log(result)
       }).catch((error) => {
         const errorCode = error.code;
-        console.log(errorCode)
+        console.log("Error "+errorCode)
       });
   }
   return (
@@ -34,7 +35,7 @@ const SignIn = () => {
             <div className="formWrapper">
               <span className='logo' >Welcome to Chat Mingle</span>
               <button onClick={handleSubmit}>
-                <div class="container">
+                <div className="container">
                   <img src={gImg} alt="Google Logo" />
                   <span>Sign in with Google</span>
                 </div>
