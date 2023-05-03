@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+$sideColor: #323338;
+$darkColor: #2c2d31;
+$fontPrimary: #ebf1ee;
+
+.formContainer {
+    background-color: $sideColor;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .formWrapper {
+        background-color: $darkColor;
+        padding: 20px 60px;
+        border: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+        .logo {
+            color: $fontPrimary;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .title {
+            color: $fontPrimary;
+            font-size: 12px;
+        }
+    }
+
+    p {
+        color: $fontPrimary;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+}
+
+.home {
+    height: 100vh;
+    background-color: $sideColor;
+    display: flex;
+    overflow: hidden;
+
+    .sidebar {
+        flex: 1;
+        background-color: $darkColor;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .container {
+        flex: 4;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .messages {
+            border-top: 1px solid white;
+            overflow: hidden;
+            overflow-y: auto;
+        }
+
+        .heading {
+            font-size: 24px;
+            color: white;
+            padding: 20px;
+        }
+
+        .input {
+            height: 100px;
+            background-color: $sideColor;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            border-top: 1px solid white;
+
+            input {
+                width: 100%;
+                border: 1px solid $darkColor;
+                border-radius: 5px;
+                padding: 15px;
+                outline: none;
+                background-color: #393a3f;
+                color: #d6d7dc;
+                font-size: 16px;
+                font-weight: 600;
+                transition: all 500ms;
+
+                &:focus,
+                &:valid {
+                    border: 1px solid $fontPrimary;
+                }
+
+                &::placeholder {
+                    color: #63666d;
+                }
+            }
+
+            .send {
+
+                button {
+                    height: 50px;
+                    border-radius: 5px;
+                    width: 90px;
+                    border: none;
+                    padding: 10px 15px;
+                    color: white;
+                    background-color: #515259;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+}
