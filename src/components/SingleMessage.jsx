@@ -1,11 +1,9 @@
 import React from 'react'
 
-import UserImg from '../assets/img/profile-pic.png'
-
-const SingleMessage = () => {
+const SingleMessage = ({userImg}) => {
   return (
     <div className='container'>
-      <img src={UserImg} alt="" />
+      <img src={userImg} alt="" />
       <div className='user-details'>
         <p className='user-name'>User Name <span>time</span></p>
         <div className="user-message">

@@ -1,39 +1,27 @@
 import React from 'react'
 import SingleMessage from './SingleMessage'
 
-const Message = () => {
+const Message = ({userImg}) => {
 
   return (
     <div className='container'>
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
-      <SingleMessage />
+      <SingleMessage userImg={userImg} />
+      <SingleMessage userImg={userImg} />
+      <SingleMessage userImg={userImg} />
+      <SingleMessage userImg={userImg} />
+      <SingleMessage userImg={userImg} />
+      <SingleMessage userImg={userImg} />
+      <SingleMessage userImg={userImg} />
+      <SingleMessage userImg={userImg} />
+      <SingleMessage userImg={userImg} />
+      <SingleMessage userImg={userImg} />
+      <SingleMessage userImg={userImg} />
+      <SingleMessage userImg={userImg} />
+      <SingleMessage userImg={userImg} />
+      <SingleMessage userImg={userImg} />
+      <SingleMessage userImg={userImg} />
+      <SingleMessage userImg={userImg} />
+      <SingleMessage userImg={userImg} />
       
     </div>
   )
