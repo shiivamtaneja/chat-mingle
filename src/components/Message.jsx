@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import SingleMessage from './SingleMessage'
 
-const Message = ({userImg}) => {
+const Message = ({ userImg }) => {
+
+  const ref = useRef()
+
+  useEffect(() => {
+    ref.current?.scrollIntoView({ behaviour: "smooth" })
+  }, [])
 
   return (
-    <div className='container'>
+    <div ref={ref}
+      className='container'
+    >
       <SingleMessage userImg={userImg} />
       <SingleMessage userImg={userImg} />
       <SingleMessage userImg={userImg} />
@@ -22,7 +30,7 @@ const Message = ({userImg}) => {
       <SingleMessage userImg={userImg} />
       <SingleMessage userImg={userImg} />
       <SingleMessage userImg={userImg} />
-      
+
     </div>
   )
 }

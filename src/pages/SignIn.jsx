@@ -17,7 +17,6 @@ const SignIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         setLogedIn(result.user)
-        console.log(result)
       }).catch((error) => {
         const errorCode = error.code;
         console.log("Error "+errorCode)
