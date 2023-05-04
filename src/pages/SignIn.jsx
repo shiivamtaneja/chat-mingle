@@ -1,48 +1,34 @@
-import React, { useState } from 'react'
-import Chat from '../components/Chat'
-import Sidebar from '../components/Sidebar'
+import React from 'react'
 
-import { signInWithPopup } from "firebase/auth";
-import { auth, provider } from "../firebase"
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { auth } from '../firebase';
 
 import gImg from '../assets/img/g-logo.png'
 
 
 const SignIn = () => {
+  const provider = new GoogleAuthProvider();
 
-  const [logedin, setLogedIn] = useState("")
+  const signInWithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, provider);
+    } catch (error) {
+      console.error("Error signing in ", error);
+    }
+  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        setLogedIn(result.user)
-      }).catch((error) => {
-        const errorCode = error.code;
-        console.log("Error "+errorCode)
-      });
-  }
   return (
-    <>
-      {
-        logedin ?
-          <div className="home">
-            <Sidebar />
-            <Chat userName={logedin.displayName} userImg={logedin.photoURL} />
-          </div> :
-          <div className="formContainer">
-            <div className="formWrapper">
-              <span className='logo' >Welcome to Chat Mingle</span>
-              <button onClick={handleSubmit}>
-                <div className="container">
-                  <img src={gImg} alt="Google Logo" />
-                  <span>Sign in with Google</span>
-                </div>
-              </button >
-            </div >
-          </div >
-      }
-    </>
+    <div className="formContainer">
+      <div className="formWrapper">
+        <span className='logo' >Welcome to Chat Mingle</span>
+        <button onClick={signInWithGoogle}>
+          <div className="container">
+            <img src={gImg} alt="Google Logo" />
+            <span>Sign in with Google</span>
+          </div>
+        </button >
+      </div >
+    </div>
   )
 }
 

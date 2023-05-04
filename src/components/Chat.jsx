@@ -7,7 +7,7 @@ const Chat = ({ userName, userImg }) => {
     <div className='container'>
       <h2 className='heading'>Welcome to Chat Mingle | {userName}</h2>
       <div className='messages' >
-        <Message userImg={userImg} />
+        {/* <Message userImg={userImg} /> */}
       </div>
       <Input />
     </div>
