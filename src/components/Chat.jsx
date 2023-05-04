@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { collection, setDoc, doc } from "firebase/firestore";
 import { db } from '../firebase'
 
-import Signout from '../pages/Signout'
+import Signout from '../pages/SignOut'
 import Input from './Input';
 import Message from './messages/Message';
 
