@@ -10,8 +10,8 @@ const Sidebar = () => {
       </div>
       <h2>Made By - Shivam Taneja</h2>
       <div className="user-details">
-        <a href="">Insta</a>
-        <a href="">Github</a>
+        <a href="https://www.linkedin.com/in/shivam-taneja/" target='_blank'>Linkedin</a>
+        <a href="https://github.com/shiivamtaneja" target='_blank'>Github</a>
       </div>
     </div>
   )

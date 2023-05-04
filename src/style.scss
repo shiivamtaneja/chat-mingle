@@ -77,6 +77,9 @@ $fontPrimary: #ebf1ee;
 
 // SignOut
 .signOut {
+    @include tablet {
+        padding-bottom: 20px;
+    }
 
     button {
         background-color: #4285f4;
@@ -126,7 +129,20 @@ $fontPrimary: #ebf1ee;
 
         .user-details {
             display: flex;
+            flex-direction: column;
             padding: 15px;
+            text-transform: uppercase;
+
+            a {
+                padding: 10px;
+                margin: 10px;
+                text-align: center;
+                background-color: #232429;
+                border: none;
+                border-radius: 2px;
+                text-decoration: none;
+                color: $fontPrimary;
+            }
         }
 
         @include tablet {
@@ -143,6 +159,10 @@ $fontPrimary: #ebf1ee;
         .headingWrapper {
             display: flex;
             align-items: center;
+
+            @include tablet {
+                flex-direction: column;
+            }
 
             .heading {
                 font-size: 24px;
@@ -232,15 +252,15 @@ $fontPrimary: #ebf1ee;
 
         .send {
             cursor: pointer;
-                height: 50px;
-                border-radius: 5px;
-                width: 90px;
-                border: none;
-                padding: 10px 15px;
-                color: white;
-                background-color: #515259;
-                font-size: 16px;
-                text-transform: uppercase;
+            height: 50px;
+            border-radius: 5px;
+            width: 90px;
+            border: none;
+            padding: 10px 15px;
+            color: white;
+            background-color: #515259;
+            font-size: 16px;
+            text-transform: uppercase;
         }
     }
 }

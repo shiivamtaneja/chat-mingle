@@ -13,7 +13,6 @@ The Web App is hosted on the web and can be accessed using the following link:
 - React
 - Firebase
 - React Firebase Hooks
-- React Router Dom
 - SASS
 
 ## Features 
