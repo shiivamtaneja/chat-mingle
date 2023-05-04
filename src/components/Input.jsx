@@ -48,13 +48,12 @@ const Input = () => {
               </div>
             ))} */}
   return (
-
-    <div className='input' >
-      <input type='text' onChange={handleInputChange} placeholder='Write a message...' required />
+    <form onSubmit={sendMessage} className='input'>
+      <input type='text' value={input} onChange={handleInputChange} placeholder='Write a message...' required />
       <div className="send">
         <button type='submit'>Send</button>
       </div>
-    </div >
+    </form>
   )
 }
 

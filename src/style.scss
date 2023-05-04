@@ -14,6 +14,7 @@ $fontPrimary: #ebf1ee;
     }
 }
 
+// SignIn
 .formContainer {
     background-color: $sideColor;
     height: 100vh;
@@ -74,6 +75,30 @@ $fontPrimary: #ebf1ee;
     }
 }
 
+// SignOut
+.signOut {
+
+    button {
+        background-color: #4285f4;
+        border: none;
+        border-radius: 2px;
+        color: white;
+
+        .container {
+            cursor: pointer;
+            width: 70px;
+            
+            span {
+                text-align: center;
+                font-weight: 600;
+                letter-spacing: .5px;
+            }
+        }
+    }
+}
+
+
+// Chats
 .home {
     height: 100vh;
     background-color: $sideColor;
@@ -115,12 +140,18 @@ $fontPrimary: #ebf1ee;
         flex-direction: column;
         justify-content: space-between;
 
-        .heading {
-            font-size: 24px;
-            color: white;
-            padding: 20px;
-        }
+        .headingWrapper {
+            display: flex;
+            align-items: center;
 
+            .heading {
+                font-size: 24px;
+                color: white;
+                padding: 20px;
+            }
+    
+        }
+        
         .messages {
             border-top: 1px solid white;
             overflow: hidden;
@@ -162,7 +193,7 @@ $fontPrimary: #ebf1ee;
                     }
                 }
             }
-        }        
+        }
     }
 
     .input {

@@ -1,7 +1,6 @@
 import React from 'react'
 
 import UserProfile from '../assets/img/profile-pic.png'
-import Signout from '../pages/Signout'
 
 const Sidebar = () => {
   return (
@@ -14,7 +13,6 @@ const Sidebar = () => {
         <a href="">Insta</a>
         <a href="">Github</a>
       </div>
-      <Signout />
     </div>
   )
 }

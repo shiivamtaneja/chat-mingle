@@ -3,11 +3,15 @@ import { signOut } from "firebase/auth";
 import { auth } from '../firebase';
 
 const Signout = () => {
-    return (
-        auth.currentUser && (
-            <button onClick={() => signOut(auth)}>Sign out</button>
-        )
-    );
+  return (
+    <div className="signOut">
+      <button onClick={() => signOut(auth)}>
+        <div className="container">
+          <span>SignOut</span>
+        </div>
+      </button >
+    </div>
+  );
 }
 
 export default Signout

@@ -18,7 +18,7 @@ const Home = () => {
           <div className="sidebar">
             <Sidebar />
           </div>
-          <Chat />
+          <Chat userName={user.displayName}/>
         </div>
       }
     </>
