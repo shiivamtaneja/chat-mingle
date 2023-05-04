@@ -1,48 +1,42 @@
-import React, { useEffect, useState } from 'react'
-
-import SingleMessage from './SingleMessage'
+import React, { useEffect, useState } from 'react';
+import SingleMessage from './SingleMessage';
 import { onSnapshot, query, orderBy } from 'firebase/firestore';
 
-
-
 const Message = ({ userMessages }) => {
-
-  const [value, setValue] = useState([]);
-  const [renderedIds, setRenderedIds] = useState([])
+  const [messages, setMessages] = useState({});
 
   useEffect(() => {
-    const messages = [];
-
     const getData = onSnapshot(
-      query(userMessages, orderBy("date", "asc")), (querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          const data = doc.data();
-          if (!renderedIds.includes(doc.id)) {
-            messages.push(data);
-            setRenderedIds((prevIds) => [...prevIds, doc.id]);
+      query(userMessages, orderBy('date', 'asc')),
+      (querySnapshot) => {
+        querySnapshot.docChanges().forEach((change) => {
+          if (change.type === 'added') {
+            const data = change.doc.data();
+            const id = change.doc.id;
+            if (!messages[id]) {
+              setMessages((prevMessages) => ({ ...prevMessages, [id]: data }));
+            }
           }
-          messages.push(doc.data());
         });
-        setValue((prevValue) => [...prevValue, ...messages]);
       }
     );
 
     return () => getData();
-  }, [renderedIds]);
+  }, []);
 
   return (
     <div className='container'>
-      {value.map((message, index) => (
+      {Object.keys(messages).map((id) => (
         <SingleMessage
-          key={index}
-          userText={message.text}
-          userImg={message.uimg}
-          userName={message.displayName}
-          messageDate={message.date}
+          key={id}
+          userText={messages[id].text}
+          userImg={messages[id].uimg}
+          userName={messages[id].displayName}
+          messageDate={messages[id].date}
         />
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default Message
+export default Message;
