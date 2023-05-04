@@ -87,7 +87,7 @@ $fontPrimary: #ebf1ee;
         .container {
             cursor: pointer;
             width: 70px;
-            
+
             span {
                 text-align: center;
                 font-weight: 600;
@@ -149,9 +149,9 @@ $fontPrimary: #ebf1ee;
                 color: white;
                 padding: 20px;
             }
-    
+
         }
-        
+
         .messages {
             border-top: 1px solid white;
             overflow: hidden;
@@ -161,8 +161,11 @@ $fontPrimary: #ebf1ee;
             .container {
                 padding: 10px;
                 color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
 
-                .container {
+                .singleContainer {
                     display: flex;
                     flex-direction: row;
                     justify-content: start;
@@ -228,7 +231,7 @@ $fontPrimary: #ebf1ee;
         }
 
         .send {
-            button {
+            cursor: pointer;
                 height: 50px;
                 border-radius: 5px;
                 width: 90px;
@@ -238,7 +241,6 @@ $fontPrimary: #ebf1ee;
                 background-color: #515259;
                 font-size: 16px;
                 text-transform: uppercase;
-            }
         }
     }
 }
