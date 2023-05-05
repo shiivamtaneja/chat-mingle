@@ -194,10 +194,12 @@ $fontPrimary: #ebf1ee;
 
                     img {
                         width: 60px;
+                        height: 60px;
                         border-radius: 50%;
 
                         @include tablet {
                             width: 40px;
+                            height: 40px;
                         }
                     }
 
@@ -205,6 +207,7 @@ $fontPrimary: #ebf1ee;
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
+                        flex: 1;
 
                         .user-name {
                             font-size: 16px;
