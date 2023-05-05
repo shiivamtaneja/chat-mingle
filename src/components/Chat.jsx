@@ -17,8 +17,6 @@ const Chat = ({ user }) => {
   let hours = messageDate.getHours();
   let minutes = messageDate.getMinutes();
   let ampm = hours >= 12 ? 'PM' : 'AM';
-  hours = hours % 12;
-  hours = hours ? hours : 12;
 
   let dateTimeArray = [day, month, year, hours, minutes, ampm];
 

@@ -190,10 +190,15 @@ $fontPrimary: #ebf1ee;
                     flex-direction: row;
                     justify-content: start;
                     gap: 15px;
+                    margin-bottom: 10px;
 
                     img {
                         width: 60px;
                         border-radius: 50%;
+
+                        @include tablet {
+                            width: 40px;
+                        }
                     }
 
                     .user-details {
@@ -204,6 +209,10 @@ $fontPrimary: #ebf1ee;
                         .user-name {
                             font-size: 16px;
                             font-weight: bold;
+
+                            @include tablet {
+                                font-size: 12px;
+                            }
                         }
 
                         p {
