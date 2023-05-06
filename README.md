@@ -8,6 +8,10 @@ The Web App is hosted on the web and can be accessed using the following link:
 
 [ChatMingle](https://chat-mingle.vercel.app/)
 
+## Screenshot
+
+![Chats](./src/assets/img/chats.png)
+
 ## Technologies Used
 
 - React

@@ -8,7 +8,7 @@ const Sidebar = () => {
       <div className="user-img">
         <img src={UserProfile} alt="Shivam Pic" />
       </div>
-      <h2>Made By - Shivam Taneja</h2>
+      <h2>Made By - Shivam Taneja <br /> Check Me out on</h2>
       <div className="user-details">
         <a href="https://www.linkedin.com/in/shivam-taneja/" target='_blank'>Linkedin</a>
         <a href="https://github.com/shiivamtaneja" target='_blank'>Github</a>
